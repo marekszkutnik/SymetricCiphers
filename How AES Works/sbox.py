@@ -44,7 +44,12 @@ state = [
 ]
 
 
+# def sub_bytes(s, sbox=s_box):
+#     """ Substitutes bytes with sbox and returns matrix. """
+#     return [[sbox[byte] for byte in word] for word in s]
+
 def sub_bytes(s, substitution_box):
+    """ Substitutes bytes with sbox and returns matrix. """
     s = sum(s, [])
     for i in range(len(s)):
         s[i] = substitution_box[s[i]]

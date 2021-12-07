@@ -15,8 +15,15 @@ round_key = [
 ]
 
 
-def add_round_key(s, k):
-    return numpy.bitwise_xor(s, k).tolist()
+# def add_round_key(s, k):
+#     return numpy.bitwise_xor(s, k).tolist()
+
+def add_round_key(state, key):
+    """ It XORs the current state with the current round key"""
+    for i in range(4):
+        for j in range(4):
+            state[i][j] ^= key[i][j]
+    return state
 
 
 def matrix2bytes(matrix):

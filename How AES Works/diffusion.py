@@ -4,6 +4,17 @@ def shift_rows(s):
     s[0][3], s[1][3], s[2][3], s[3][3] = s[3][3], s[0][3], s[1][3], s[2][3]
 
 
+# def inv_shift_rows(s):
+#     """ It keeps the first row of the state matrix the same.
+#         The second row is shifted over one column to the left, wrapping around.
+#         The third row is shifted two columns, the fourth row by three.
+#     """
+#     n = [word[:] for word in s]
+#     for i in range(4):
+#         for j in range(4):
+#             n[i][j] = s[(i - j) % 4][j]
+#     return n
+
 def inv_shift_rows(s):
     s[1][1], s[2][1], s[3][1], s[0][1] = s[0][1], s[1][1], s[2][1], s[3][1]
     s[2][2], s[3][2], s[0][2], s[1][2] = s[0][2], s[1][2], s[2][2], s[3][2]
